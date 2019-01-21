@@ -11,9 +11,10 @@ const checkAuth = (req, res, next) => {
         req.userData = decoded;
         next();
     } catch(error) {
-        return res.status(401).json({
-            "message":"Auth failed"
-        });
+        res.render('error', {message:"Auth failed"});
+        // return res.status(401).json({
+        //     "message":"Auth failed"
+        // });
     }
 };
 

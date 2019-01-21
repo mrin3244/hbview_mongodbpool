@@ -1,20 +1,16 @@
-<html>
-    <title>Login</title>
-    <body>
-        <h1>Login Page</h1>
-        <table>
-            <form action="login" method="POST">
-                <tr>
-                    <td><input type="text" name="email" placeholder="email" /></td>
-                </tr>
-                <tr>
-                    <td><input type="password" name="password" placeholder="password" /></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="submit" /></td>
-                </tr>
-
-            </form>
-        </table>
-    </body>
-</html>
+<div class="row">
+    <div class="col-sm-8" style="background: #aaa; margin-bottom:30px; padding:20px;">
+        <h2>Teacher Login</h2>
+        <form action="login" method="POST">
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="abc@mail.com">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" name="password" placeholder="*******">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

@@ -32,5 +32,9 @@ module.exports = function(dbs, hb){
         res.render('registration');
     });
 
+    app.get('/*', (req, res) => {
+        res.render('error');
+    });
+
     return app;
 }

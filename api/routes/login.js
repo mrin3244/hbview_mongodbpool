@@ -38,13 +38,11 @@ module.exports = function(dbs){
                         }
                     );
                     sess.token=token;
-                    //sess.email = docs[0].email;
-                    //res.write('<h1>Hello '+sess.token+'</h1>');
-                    //res.end('<a href="+">Login</a>');
-                    return res.status(200).json({
-                        "message":"Auth successful",
-                        "token": sess.token
-                    });
+                    res.redirect('/home');
+                    // return res.status(200).json({
+                    //     "message":"Auth successful",
+                    //     "token": sess.token
+                    // });
                 }
             });
         
@@ -89,7 +87,8 @@ module.exports = function(dbs){
                         //console.log(result);
                         dbs.collection('teacher').insertOne(result, function(err, result) {
                             if(result){
-                                return res.status(200).json({"message": "insert data"});
+                                res.redirect('/');
+                                //return res.status(200).json({"message": "insert data"});
                             }
                             if(err){
                                 return res.status(500).json({"error":err});
@@ -98,16 +97,6 @@ module.exports = function(dbs){
                     }
 
                 });
-                // bcrypt.hash(req.body.password, 10, (err,hash) => {
-                //     if(err){
-                //         return res.status(500).json({
-                //             "error": err
-                //         })
-                //     } else {
-                        
-                        
-                //     }
-                // });
             }
 
         });

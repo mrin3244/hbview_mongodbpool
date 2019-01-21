@@ -1,32 +1,32 @@
-<html>
-    <title>registration</title>
-    <body>
-        <h1>registration Page</h1>
-        <table>
-            <form action="reg" method="POST">
-                <tr>
-                    <td><input type="text" name="name" placeholder="name" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="empNo" placeholder="Emp No" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="post" placeholder="Post" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="email" placeholder="email" /></td>
-                </tr>
-                <tr>
-                    <td><input type="password" name="password" placeholder="password" /></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="salary" placeholder="salary" /></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="submit" /></td>
-                </tr>
-
-            </form>
-        </table>
-    </body>
-</html>
+<div class="row">
+    <div class="col-sm-8" style="background: #aaa; margin-bottom:30px; padding:20px;">
+        <h2>Teacher Registration</h2>
+        <form action="login/reg" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="empNo">Employee No:</label>
+                <input type="text" class="form-control" id="empNo" name="empNo" placeholder="Employee No">
+            </div>
+            <div class="form-group">
+                <label for="post">Post:</label>
+                <input type="text" class="form-control" id="post" name="post" placeholder="Post">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="abc@mail.com">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" name="password" placeholder="*******">
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary:</label>
+                <input type="text" class="form-control" id="salary" name="salary" placeholder="salary amount">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

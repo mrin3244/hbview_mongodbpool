@@ -1,12 +1,12 @@
 const handlebars = require('express-handlebars');
 
-const path = __dirname + '/../../views';
+const path = __dirname + '/../../views/';
 
 const hb = handlebars({
-    defaultLayout : "layout" ,
+    defaultLayout : "main" ,
     extname : "hbs" ,
-    layoutsDir : path,
-    partialsDir : path
+    layoutsDir : path + "layouts",
+    partialsDir : path + "partial"
 });
 
 module.exports = hb;

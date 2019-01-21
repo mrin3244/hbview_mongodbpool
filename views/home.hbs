@@ -1,6 +1,32 @@
 <html>
     <title>Home</title>
     <body>
-        <h1>Home</h1>
+        <h2>Teachers Details Table</h2>            
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Emp No</th>
+                    <th>Name</th>
+                    <th>Post</th>
+                    <th>Salary</th>
+                    <th>Email</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each teachers}}
+                <tr>
+                    <td>{{ this.empNo }}</td>
+                    <td>{{ this.name }}</td>
+                    <td>{{ this.post }}</td>
+                    <td>{{ this.salary }}</td>
+                    <td>{{ this.email }}</td>
+                    <td><a class="btn btn-warning btn-sm" href="/home/{{ this._id }}">Edit</a></td>
+                    <td><a class="btn btn-danger btn-sm" href="/home/delete/{{ this._id }}">Delete</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>  
     </body>
 </html>
