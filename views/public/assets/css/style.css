@@ -1,0 +1,20 @@
+.fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+
+  .form-div {
+    background: #aaa; 
+    margin-bottom:30px; 
+    padding:20px;
+  }
+
+  .center-div {
+    top: 20px; 
+    bottom: 20px; 
+    left: 0; 
+    right: 0; 
+    width: 500px; 
+    height: 200px; 
+    margin: auto;
+  }

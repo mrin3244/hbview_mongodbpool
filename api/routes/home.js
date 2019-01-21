@@ -2,6 +2,7 @@ const express = require('express');
 const checkAuth = require('../middleware/auth');
 const mongodb = require('mongodb');
 const joi = require('joi');
+var sess = "";
 
 module.exports = function(dbs){
     const router = express.Router();
@@ -10,7 +11,9 @@ module.exports = function(dbs){
         dbs.collection('teacher').find().toArray(function(err, docs){
             if(docs){
                 //console.log(docs);
-                res.render('home',{teachers:docs});
+                sess = req.session;
+                res.render('home', {token:sess.token, teachers:docs});
+                //res.render('home',{teachers:docs});
                 //return res.status(200).json(docs);
             }
             if(err){
@@ -25,7 +28,8 @@ module.exports = function(dbs){
         dbs.collection('teacher').findOne({"_id":tId}, function(err, doc){
             if(doc){
                 //console.log(doc);
-                res.render('edit',{teacher:doc});
+                sess = req.session;
+                res.render('edit',{token:sess.token, teacher:doc});
             }
             if(err){
                 return res.status(500).json({"error":err});
@@ -72,7 +76,7 @@ module.exports = function(dbs){
 
     router.get('/delete/:eId', (req, res, next) => {
         const eId = mongodb.ObjectID(req.params.eId);
-        console.log(eId);
+        //console.log(eId);
         dbs.collection('teacher').deleteOne({"_id":eId}, function(err, result){
             if(result){
                 res.redirect('/home');
